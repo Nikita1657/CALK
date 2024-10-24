@@ -31,9 +31,6 @@ public class Main {
             printInQuotes(data[0] + data[1]);
         } else if (action == '*') {
             int multiplier = Integer.parseInt(data[1]);
-            if (multiplier == 0) {
-                throw new Exception("делить на 0 нельзя");
-            }
             if (multiplier < 1 || multiplier > 10) {
                 throw new Exception("Число для умножения должно быть от 1 до 10");
             }
