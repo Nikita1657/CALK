@@ -1,21 +1,21 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws Exception {
-        Scanner scn = new Scanner(System.in);
-        String exp = scn.nextLine();
+        Scanner calk2 = new Scanner(System.in);
+        String calk = calk2.nextLine();
         char action;
         String[] data;
-        if (exp.contains(" + ")) {
-            data = exp.split(" \\+ ");
+        if (calk.contains(" + ")) {
+            data = calk.split(" \\+ ");
             action = '+';
-        } else if (exp.contains(" - ")) {
-            data = exp.split(" - ");
+        } else if (calk.contains(" - ")) {
+            data = calk.split(" - ");
             action = '-';
-        } else if (exp.contains(" * ")) {
-            data = exp.split(" \\* ");
+        } else if (calk.contains(" * ")) {
+            data = calk.split(" \\* ");
             action = '*';
-        } else if (exp.contains(" / ")) {
-            data = exp.split(" / ");
+        } else if (calk.contains(" / ")) {
+            data = calk.split(" / ");
             action = '/';
         }else{
             throw new Exception("Некорректный знак действия");
