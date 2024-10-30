@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -20,6 +21,9 @@ public class Main {
         }else{
             throw new Exception("Некорректный знак действия");
         }
+        if (data[0].contains("\"")){}
+            else throw new Exception("ервым аргументом выражения, подаваемого на вход, должна быть строк");
+
         if (action == '*' || action == '/') {
             if (data[1].contains("\"")) throw new Exception("Строчку можно делить или умножать только на число");
         }
@@ -31,17 +35,32 @@ public class Main {
             printInQuotes(data[0] + data[1]);
         } else if (action == '*') {
             int multiplier = Integer.parseInt(data[1]);
+<<<<<<< Updated upstream
+=======
+            if (multiplier == 0) {
+                throw new Exception("делить на 0 нельзя");
+            }
+
+>>>>>>> Stashed changes
             if (multiplier < 1 || multiplier > 10) {
                 throw new Exception("Число для умножения должно быть от 1 до 10");
             }
 
 
-
             String result = "";
             for (int i = 0; i < multiplier; i++) {
-                result+=data[0];
+                result += data[0];
             }
-            printInQuotes(result);
+                if (result.length() > 40) {
+                    String rez = result.substring(0, 40);
+                    System.out.println(rez + "...");
+
+                } else {
+                    System.out.println(result);
+
+            }
+
+
         } else if (action == '-') {
             int index = data[0].indexOf(data[1]);
             if(index == -1){
