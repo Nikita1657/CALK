@@ -21,9 +21,13 @@ public class Main {
         }else{
             throw new Exception("Некорректный знак действия");
         }
-        if (data[0].contains("\"")){}
-            else throw new Exception("Первым аргументом выражения, подаваемого на вход, должна быть строка");
-
+            if (data[0].length() > 10) {
+                throw new Exception("программа принимает строки до 10 символов");
+            }
+        if (data[0].contains("\"")) {
+        }  else{
+            new Exception("Первым аргументом выражения, подаваемого на вход, должна быть строка");
+        }
         if (action == '*' || action == '/') {
             if (data[1].contains("\"")) throw new Exception("Строчку можно делить или умножать только на число");
         }
@@ -35,7 +39,6 @@ public class Main {
             printInQuotes(data[0] + data[1]);
         } else if (action == '*') {
             int multiplier = Integer.parseInt(data[1]);
-
             if (multiplier == 0) {
                 throw new Exception("делить на 0 нельзя");
             }
